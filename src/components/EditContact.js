@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch} from "react-redux";
+import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { useHistory } from "react-router-dom";
@@ -12,12 +12,11 @@ const EditContact = () => {
 
   const { id } = useParams();
 
-  
   const contacts = useSelector((state) => state);
 
-  const dispatch = useDispatch(); 
+  const dispatch = useDispatch();
   const history = useHistory();
-  
+
   const currentContact = contacts.find(
     (contact) => contact.id === parseInt(id)
   );
@@ -33,8 +32,12 @@ const EditContact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const checkEmail = contacts.find((contact) =>contact.id !== parseInt(id) && contact.email === email);
-    const checkNumber = contacts.find((contact) => contact.id !== parseInt(id) && contact.number === number);
+    const checkEmail = contacts.find(
+      (contact) => contact.id !== parseInt(id) && contact.email === email
+    );
+    const checkNumber = contacts.find(
+      (contact) => contact.id !== parseInt(id) && contact.number === number
+    );
 
     if (!email || !name || !number) {
       return toast.warning("Please fill in all forms");
@@ -70,8 +73,8 @@ const EditContact = () => {
                     type="text"
                     placeholder="Name"
                     value={name}
-                    onChange ={(e) =>setName( e.target.value)}
-                    className="form-control"
+                    onChange={(e) => setName(e.target.value)}
+                    className="form-control my-2"
                   />
                 </div>
                 <div className="form-group">
@@ -80,7 +83,7 @@ const EditContact = () => {
                     placeholder="Email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="form-control"
+                    className="form-control my-2"
                   />
                 </div>
                 <div className="form-group">
@@ -88,12 +91,12 @@ const EditContact = () => {
                     type="number"
                     placeholder="Phone Number"
                     value={number}
-                    onChange={(e) =>setNumber( e.target.value)}
-                    className="form-control"
+                    onChange={(e) => setNumber(e.target.value)}
+                    className="form-control my-2"
                   />
                 </div>
                 <div className="form-group">
-                  <button type="submit" className="btn btn-primary ml-5">
+                  <button type="submit" className="btn btn-primary mx-2">
                     Update Contact
                   </button>
                   <button type="button" className="btn btn-danger ">

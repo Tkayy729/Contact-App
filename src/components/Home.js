@@ -5,7 +5,6 @@ import { toast } from "react-toastify";
 
 const Home = () => {
   const contacts = useSelector((state) => state);
-
   const dispatch = useDispatch();
 
   const deleteContact = (id) => {
@@ -40,7 +39,7 @@ const Home = () => {
                   <td>
                     <Link
                       to={`/edit/${contact.id}`}
-                      className="btn btn-small btn-primary mr-5"
+                      className="btn btn-small btn-primary mx-2"
                     >
                       Edit
                     </Link>

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
+import { useDispatch , useSelector} from "react-redux";
 import { useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
 
@@ -13,14 +12,13 @@ const AddContact = () => {
   const dispatch = useDispatch(); 
   const history = useHistory();
 
+  
   const handleSubmit = (e) => {
     e.preventDefault();
 
     const checkEmail = contacts.find((contact) => contact.email === email);
     const checkNumber = contacts.find((contact) => contact.number === number);
   
-    
-
 
     if (!email || !name || !number) {
       return toast.warning("Please fill in all forms");
@@ -50,7 +48,7 @@ const AddContact = () => {
       <div className="row">
         <div className="col-md-6 shadow mx-auto p-5">
           <form onSubmit={handleSubmit}>
-            <div className="form-group">
+            <div className="form-group my-2">
               <input
                 type="text"
                 placeholder="Name"
@@ -59,7 +57,7 @@ const AddContact = () => {
                 onChange={(e) => setName(e.target.value)}
               />
             </div>
-            <div className="form-group">
+            <div className="form-group my-2">
               <input
                 type="email"
                 placeholder="Email"
@@ -68,7 +66,7 @@ const AddContact = () => {
                 onChange={(e) => setEmail(e.target.value)}
               />
             </div>
-            <div className="form-group">
+            <div className="form-group my-2">
               <input
                 type="number"
                 placeholder="Phone Number"
