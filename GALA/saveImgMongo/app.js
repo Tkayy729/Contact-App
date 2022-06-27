@@ -40,11 +40,14 @@ const multerStorage = multer.diskStorage({
 
 app.post("/api/uploadFile", upload.single("myFile"), async (req, res) => {
 	// Stuff to be added later
-	console.log(req.file);
+	//console.log(req.file);
 	try {
+		const {school} = req.body;
 		const newFile = await File.create({
 		  name: req.file.filename,
+		  school:school
 		});
+		res.json(newFile);
 		res.status(200).json({
 		  status: "success",
 		  message: "File created successfully!!",

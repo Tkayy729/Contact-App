@@ -21,6 +21,7 @@
     <main class="admin">
       <div class="admin__upload-file">
         <form action="/api/uploadFile" enctype="multipart/form-data" method="post">
+          <input type="text" class="admin__input" placeholder="enter school" name="school" />
           <input type="file" class="admin__input" id="myFile" name="myFile" />
           <input class="admin__submit" type="submit" />
         </form>

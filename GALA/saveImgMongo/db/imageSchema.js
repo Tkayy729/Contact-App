@@ -10,6 +10,10 @@ const fileSchema = new mongoose.Schema({
     type: String,
     required: [true, "Uploaded file must have a name"],
   },
+  school: {
+    type: String,
+    required: true,
+  },
 });
 
 // Creating a Model from that Schema
