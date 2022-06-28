@@ -44,7 +44,7 @@ app.post("/api/uploadFile", upload.single("myFile"), async (req, res) => {
 	try {
 		const {school} = req.body;
 		const newFile = await File.create({
-		  name: req.file.filename,
+		  name: req.file.filenamez,
 		  school:school
 		});
 		res.json(newFile);

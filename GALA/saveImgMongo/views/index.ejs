@@ -30,7 +30,7 @@
   </body>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script>
-    const parentDiv = document.querySelector(".admin");
+    const  parentDiv = document.querySelector(".admin");
     window.addEventListener("load", async () => {
       try {
         let result = await axios({
@@ -47,7 +47,7 @@
                   <a href="${file.name}" class="files__link"><i class="fa fa-eye tests__icon" aria-hidden="true"></i></a>
                 </div>
               `;
-          parentDiv.insertAdjacentHTML("beforeend", markup);
+           parentDiv.insertAdjacentHTML("beforeend", markup);
         });
       } catch (error) {
         console.log(error);
